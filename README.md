@@ -33,7 +33,7 @@ Execute a aplicação.
 Configuração
 Para configurar o projeto localmente, siga os passos abaixo:
 
-Clone o Repositório: git clone https://github.com/seu-usuario/nome-do-repositorio.git
+Clone o Repositório: git clone (https://github.com/lemuelpires/AppControleMantec).git
 Instale as Dependências: dotnet restore
 Configurações Adicionais: Configure as strings de conexão com o MongoDB em appsettings.json.
 Execute a Aplicação: dotnet run
