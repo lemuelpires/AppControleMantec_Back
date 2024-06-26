@@ -4,6 +4,7 @@ Aplicativo de controlde de Assistencia Técnica_projeto pessoal
 
 Backend para Controle de Assistência Técnica
 Este projeto de backend foi desenvolvido em C# utilizando a arquitetura Clean Architecture, organizado em várias camadas para separação de responsabilidades e facilidade de manutenção.
+Foi desenvolvido em periodo de ferias, do dia 21/06/2024 a 26/06/2024.
 
 Estrutura do Projeto
 O projeto está estruturado em diversas camadas:
