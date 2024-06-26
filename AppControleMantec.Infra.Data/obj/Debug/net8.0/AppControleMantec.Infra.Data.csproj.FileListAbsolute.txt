@@ -1,0 +1,16 @@
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\bin\Debug\net8.0\mongocrypt.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\bin\Debug\net8.0\AppControleMantec.Infra.Data.deps.json
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\bin\Debug\net8.0\AppControleMantec.Infra.Data.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\bin\Debug\net8.0\AppControleMantec.Infra.Data.pdb
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\bin\Debug\net8.0\AppControleMantec.Domain.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\bin\Debug\net8.0\AppControleMantec.Domain.pdb
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.csproj.AssemblyReference.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.AssemblyInfo.cs
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppContr.97221683.Up2Date
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\refint\AppControleMantec.Infra.Data.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\AppControleMantec.Infra.Data.pdb
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data\obj\Debug\net8.0\ref\AppControleMantec.Infra.Data.dll

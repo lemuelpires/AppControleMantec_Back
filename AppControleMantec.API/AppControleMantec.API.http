@@ -1,0 +1,6 @@
+@AppControleMantec.API_HostAddress = http://localhost:5015
+
+GET {{AppControleMantec.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
