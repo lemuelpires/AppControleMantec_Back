@@ -11,3 +11,4 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Domain\obj\Debug\net8.0\Ap
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Domain\obj\Debug\net8.0\refint\AppControleMantec.Domain.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Domain\obj\Debug\net8.0\AppControleMantec.Domain.pdb
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Domain\obj\Debug\net8.0\ref\AppControleMantec.Domain.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Domain\obj\Debug\net8.0\AppControleMantec.Domain.sourcelink.json

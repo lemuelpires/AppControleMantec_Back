@@ -9,10 +9,11 @@ namespace AppControleMantec.Domain.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         [BsonElement("ProdutoID")]
-        public int ProdutoID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string ProdutoID { get; set; }
 
         [BsonElement("Quantidade")]
         public int Quantidade { get; set; }
@@ -34,7 +35,7 @@ namespace AppControleMantec.Domain.Entities
         {
         }
 
-        public Estoque(int produtoID, int quantidade, DateTime dataAtualizacao)
+        public Estoque(string produtoID, int quantidade, DateTime dataAtualizacao)
         {
             ValidateDomain(produtoID, quantidade, dataAtualizacao);
             ProdutoID = produtoID;
@@ -43,9 +44,10 @@ namespace AppControleMantec.Domain.Entities
             Ativo = true;
         }
 
-        public Estoque(string id, int produtoID, int quantidade, DateTime dataAtualizacao, bool ativo)
+        public Estoque(string id, string produtoID, int quantidade, DateTime dataAtualizacao, bool ativo)
         {
             Id = id;
+            ValidateDomain(produtoID, quantidade, dataAtualizacao);
             ProdutoID = produtoID;
             Quantidade = quantidade;
             DataAtualizacao = dataAtualizacao;
@@ -68,9 +70,9 @@ namespace AppControleMantec.Domain.Entities
         #endregion
 
         #region Métodos Privados de Validação
-        private void ValidateDomain(int produtoID, int quantidade, DateTime dataAtualizacao)
+        private void ValidateDomain(string produtoID, int quantidade, DateTime dataAtualizacao)
         {
-            DomainExceptionValidation.When(produtoID <= 0, "Produto inválido. Selecione um produto válido.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(produtoID), "Produto inválido. Selecione um produto válido.");
             DomainExceptionValidation.When(quantidade < 0, "Quantidade inválida. A quantidade não pode ser negativa.");
 
             // Aqui você pode adicionar validações adicionais conforme necessário

@@ -10,19 +10,19 @@ namespace AppControleMantec.Domain.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
         [BsonElement("Nome")]
-        public string Nome { get; set; }
+        public string Nome { get; set; } = string.Empty;
 
         [BsonElement("Cargo")]
-        public string Cargo { get; set; }
+        public string Cargo { get; set; } = string.Empty;
 
         [BsonElement("Telefone")]
-        public string Telefone { get; set; }
+        public string Telefone { get; set; } = string.Empty;
 
         [BsonElement("Email")]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [BsonElement("DataContratacao")]
         [BsonRepresentation(BsonType.DateTime)]
@@ -33,7 +33,7 @@ namespace AppControleMantec.Domain.Entities
 
         [BsonIgnoreIfNull]
         [BsonIgnore]
-        public virtual ICollection<OrdemDeServico> OrdensDeServico { get; set; }
+        public virtual ICollection<OrdemDeServico> OrdensDeServico { get; set; } = new List<OrdemDeServico>();
 
         #region Construtores
         // Construtor padrão necessário para o MongoDB Driver
@@ -61,6 +61,7 @@ namespace AppControleMantec.Domain.Entities
             Email = email;
             DataContratacao = dataContratacao;
             Ativo = ativo;
+            OrdensDeServico = new List<OrdemDeServico>();
         }
         #endregion
 
@@ -89,7 +90,7 @@ namespace AppControleMantec.Domain.Entities
             Email = email;
         }
 
-        private bool IsValidEmail(string email)
+        private static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
                 return false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using AppControleMantec.Application.DTOs;
@@ -16,8 +17,8 @@ namespace AppControleMantec.Application.Services
 
         public EstoqueAppService(IEstoqueRepository estoqueRepository, IMapper mapper)
         {
-            _estoqueRepository = estoqueRepository;
-            _mapper = mapper;
+            _estoqueRepository = estoqueRepository ?? throw new ArgumentNullException(nameof(estoqueRepository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<IEnumerable<EstoqueDTO>> GetEstoquesAsync()
@@ -45,12 +46,8 @@ namespace AppControleMantec.Application.Services
 
         public async Task AtualizarEstoqueAsync(string id, EstoqueUpdateCommand dto)
         {
-            var estoque = await _estoqueRepository.GetEstoqueByIdAsync(id);
-
-            if (estoque == null)
-            {
-                throw new Exception("Estoque não encontrado.");
-            }
+            var estoque = await _estoqueRepository.GetEstoqueByIdAsync(id)
+                ?? throw new Exception("Estoque não encontrado.");
 
             _mapper.Map(dto, estoque);
 
@@ -59,12 +56,8 @@ namespace AppControleMantec.Application.Services
 
         public async Task DesativarEstoqueAsync(string id)
         {
-            var estoque = await _estoqueRepository.GetEstoqueByIdAsync(id);
-
-            if (estoque == null)
-            {
-                throw new Exception("Estoque não encontrado.");
-            }
+            var estoque = await _estoqueRepository.GetEstoqueByIdAsync(id)
+                ?? throw new Exception("Estoque não encontrado.");
 
             estoque.Ativo = false;
 
@@ -73,12 +66,8 @@ namespace AppControleMantec.Application.Services
 
         public async Task AtivarEstoqueAsync(string id)
         {
-            var estoque = await _estoqueRepository.GetEstoqueByIdAsync(id);
-
-            if (estoque == null)
-            {
-                throw new Exception("Estoque não encontrado.");
-            }
+            var estoque = await _estoqueRepository.GetEstoqueByIdAsync(id)
+                ?? throw new Exception("Estoque não encontrado.");
 
             estoque.Ativo = true;
 

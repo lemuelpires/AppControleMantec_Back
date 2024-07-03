@@ -9,17 +9,20 @@ namespace AppControleMantec.Application.AppOrdemDeServico.Commands
     {
 
         [BsonElement("ClienteID")]
-        public int ClienteID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? ClienteID { get; set; }
 
         [BsonElement("FuncionarioID")]
-        public int FuncionarioID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? FuncionarioID { get; set; }
 
         [BsonElement("ProdutoID")]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string ProdutoID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? ProdutoID { get; set; }
 
         [BsonElement("ServicoID")]
-        public int ServicoID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? ServicoID { get; set; }
 
         [BsonElement("DataEntrada")]
         [BsonRepresentation(BsonType.DateTime)]
@@ -30,10 +33,10 @@ namespace AppControleMantec.Application.AppOrdemDeServico.Commands
         public DateTime? DataConclusao { get; set; }
 
         [BsonElement("Status")]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         [BsonElement("Observacoes")]
-        public string Observacoes { get; set; }
+        public string? Observacoes { get; set; }
 
         [BsonElement("Ativo")]
         public bool Ativo { get; set; }

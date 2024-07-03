@@ -14,3 +14,4 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data.Mongo\obj\Debug
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data.Mongo\obj\Debug\net8.0\refint\AppControleMantec.Infra.Data.Mongo.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data.Mongo\obj\Debug\net8.0\AppControleMantec.Infra.Data.Mongo.pdb
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data.Mongo\obj\Debug\net8.0\ref\AppControleMantec.Infra.Data.Mongo.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.Data.Mongo\obj\Debug\net8.0\AppControleMantec.Infra.Data.Mongo.sourcelink.json

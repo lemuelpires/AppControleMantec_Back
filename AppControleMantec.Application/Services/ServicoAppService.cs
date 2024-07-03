@@ -66,7 +66,6 @@ namespace AppControleMantec.Application.Services
             }
         }
 
-
         public async Task<string> InsertServicoAsync(ServicoDTO servicoDto)
         {
             if (servicoDto == null)
@@ -91,7 +90,6 @@ namespace AppControleMantec.Application.Services
 
             return servico.Id;
         }
-
 
         public async Task UpdateServicoAsync(ServicoDTO servicoDto)
         {

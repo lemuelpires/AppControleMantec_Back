@@ -12,17 +12,20 @@ namespace AppControleMantec.Domain.Entities
         public string Id { get; set; }
 
         [BsonElement("ClienteID")]
-        public int ClienteID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string ClienteID { get; set; }
 
         [BsonElement("FuncionarioID")]
-        public int FuncionarioID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string FuncionarioID { get; set; }
 
         [BsonElement("ProdutoID")]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.String)]
         public string ProdutoID { get; set; }
 
         [BsonElement("ServicoID")]
-        public int ServicoID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string ServicoID { get; set; }
 
         [BsonElement("DataEntrada")]
         [BsonRepresentation(BsonType.DateTime)]
@@ -63,7 +66,7 @@ namespace AppControleMantec.Domain.Entities
         {
         }
 
-        public OrdemDeServico(int clienteID, int funcionarioID, int servicoID, DateTime dataEntrada, string status, string observacoes)
+        public OrdemDeServico(string clienteID, string funcionarioID, string servicoID, DateTime dataEntrada, string status, string observacoes)
         {
             ValidateDomain(clienteID, funcionarioID, servicoID, dataEntrada, status, observacoes);
             ClienteID = clienteID;
@@ -75,7 +78,7 @@ namespace AppControleMantec.Domain.Entities
             Ativo = true;
         }
 
-        public OrdemDeServico(string id, int clienteID, int funcionarioID, string produtoID, int servicoID, DateTime dataEntrada, DateTime? dataConclusao, string status, string observacoes, bool ativo)
+        public OrdemDeServico(string id, string clienteID, string funcionarioID, string produtoID, string servicoID, DateTime dataEntrada, DateTime? dataConclusao, string status, string observacoes, bool ativo)
         {
             Id = id;
             ClienteID = clienteID;
@@ -105,11 +108,11 @@ namespace AppControleMantec.Domain.Entities
         #endregion
 
         #region Métodos Privados de Validação
-        private void ValidateDomain(int clienteID, int funcionarioID, int servicoID, DateTime dataEntrada, string status, string observacoes)
+        private void ValidateDomain(string clienteID, string funcionarioID, string servicoID, DateTime dataEntrada, string status, string observacoes)
         {
-            DomainExceptionValidation.When(clienteID <= 0, "Cliente inválido. Selecione um cliente válido.");
-            DomainExceptionValidation.When(funcionarioID <= 0, "Funcionário inválido. Selecione um funcionário válido.");
-            DomainExceptionValidation.When(servicoID <= 0, "Serviço inválido. Selecione um serviço válido.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(clienteID), "Cliente inválido. Selecione um cliente válido.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(funcionarioID), "Funcionário inválido. Selecione um funcionário válido.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(servicoID), "Serviço inválido. Selecione um serviço válido.");
 
             DomainExceptionValidation.When(string.IsNullOrEmpty(status), "Status inválido. O status é obrigatório.");
             DomainExceptionValidation.When(status.Length > 50, "Status inválido. O status deve ter no máximo 50 caracteres.");

@@ -105,7 +105,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // DELETE: api/ordemdeservico/{id}
-        [HttpDelete("{id}")]
+        [HttpPut("desativar/{id}")]
         public async Task<IActionResult> DesativarOrdemDeServico(string id)
         {
             try

@@ -35,7 +35,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // GET: api/estoque/5
-        [HttpGet("{id}", Name = "GetEstoqueById")]
+        [HttpGet("{id:length(24)}", Name = "GetEstoqueById")]
         public async Task<ActionResult<EstoqueDTO>> GetEstoqueById(string id)
         {
             try
@@ -69,7 +69,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // PUT: api/estoque/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> AtualizarEstoque(string id, [FromBody] EstoqueUpdateCommand command)
         {
             try
@@ -84,7 +84,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // DELETE: api/estoque/5
-        [HttpDelete("{id}")]
+        [HttpPut("desativar/{id:length(24)}")]
         public async Task<IActionResult> DesativarEstoque(string id)
         {
             try
@@ -99,7 +99,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // PUT: api/estoque/ativar/5
-        [HttpPut("ativar/{id}")]
+        [HttpPut("ativar/{id:length(24)}")]
         public async Task<IActionResult> AtivarEstoque(string id)
         {
             try

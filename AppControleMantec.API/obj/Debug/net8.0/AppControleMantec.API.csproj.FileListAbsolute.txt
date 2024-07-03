@@ -62,3 +62,4 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppCo
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\ref\AppControleMantec.API.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.sourcelink.json

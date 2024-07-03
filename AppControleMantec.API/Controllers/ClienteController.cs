@@ -84,7 +84,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // DELETE: api/cliente/{id}
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("desativar/{id:length(24)}")]
         public async Task<IActionResult> DesativarCliente(string id)
         {
             try

@@ -12,17 +12,20 @@ namespace AppControleMantec.Application.AppOrdemDeServico.Commands
         public string? Id { get; set; }
 
         [BsonElement("ClienteID")]
-        public int ClienteID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? ClienteID { get; set; }
 
         [BsonElement("FuncionarioID")]
-        public int FuncionarioID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? FuncionarioID { get; set; }
 
         [BsonElement("ProdutoID")]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.String)]
         public string? ProdutoID { get; set; }
 
         [BsonElement("ServicoID")]
-        public int ServicoID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? ServicoID { get; set; }
 
         [BsonElement("DataEntrada")]
         [BsonRepresentation(BsonType.DateTime)]

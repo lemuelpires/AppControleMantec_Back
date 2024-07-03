@@ -18,3 +18,4 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.IoC\obj\Debug\net8.0
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.IoC\obj\Debug\net8.0\refint\AppControleMantec.Infra.IoC.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.IoC\obj\Debug\net8.0\AppControleMantec.Infra.IoC.pdb
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.IoC\obj\Debug\net8.0\ref\AppControleMantec.Infra.IoC.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.Infra.IoC\obj\Debug\net8.0\AppControleMantec.Infra.IoC.sourcelink.json

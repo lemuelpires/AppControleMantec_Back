@@ -94,7 +94,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // DELETE: api/servico/5
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("desativar/{id:length(24)}")]
         public async Task<IActionResult> DesativarServico(string id)
         {
             try

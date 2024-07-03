@@ -11,7 +11,8 @@ namespace AppControleMantec.Application.AppEstoque.Commands
         public string? Id { get; set; }
 
         [BsonElement("ProdutoID")]
-        public int ProdutoID { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string? ProdutoID { get; set; }
 
         [BsonElement("Quantidade")]
         public int Quantidade { get; set; }

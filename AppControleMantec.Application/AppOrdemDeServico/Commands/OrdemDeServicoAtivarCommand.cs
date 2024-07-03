@@ -4,6 +4,6 @@ namespace AppControleMantec.Application.AppOrdemDeServico.Commands
 {
     public class OrdemDeServicoAtivarCommand : IRequest<bool>
     {
-        public string Id { get; set; }
+        public string? Id { get; set; }
     }
 }

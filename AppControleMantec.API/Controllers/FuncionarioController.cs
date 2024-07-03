@@ -84,7 +84,7 @@ namespace AppControleMantec.API.Controllers
         }
 
         // DELETE: api/funcionario/5
-        [HttpDelete("{id}")]
+        [HttpDelete("desativar/{id}")]
         public async Task<IActionResult> DesativarFuncionario(string id)
         {
             try

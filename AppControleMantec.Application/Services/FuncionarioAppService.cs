@@ -17,8 +17,8 @@ namespace AppControleMantec.Application.Services
 
         public FuncionarioAppService(IFuncionarioRepository funcionarioRepository, IMapper mapper)
         {
-            _funcionarioRepository = funcionarioRepository;
-            _mapper = mapper;
+            _funcionarioRepository = funcionarioRepository ?? throw new ArgumentNullException(nameof(funcionarioRepository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<IEnumerable<FuncionarioDTO>> GetFuncionariosAsync()
@@ -45,12 +45,8 @@ namespace AppControleMantec.Application.Services
 
         public async Task AtualizarFuncionarioAsync(string id, FuncionarioUpdateCommand dto)
         {
-            var funcionario = await _funcionarioRepository.GetFuncionarioByIdAsync(id);
-
-            if (funcionario == null)
-            {
-                throw new Exception("Funcionário não encontrado.");
-            }
+            var funcionario = await _funcionarioRepository.GetFuncionarioByIdAsync(id)
+                ?? throw new Exception("Funcionário não encontrado.");
 
             _mapper.Map(dto, funcionario);
 
@@ -59,12 +55,8 @@ namespace AppControleMantec.Application.Services
 
         public async Task DesativarFuncionarioAsync(string id)
         {
-            var funcionario = await _funcionarioRepository.GetFuncionarioByIdAsync(id);
-
-            if (funcionario == null)
-            {
-                throw new Exception("Funcionário não encontrado.");
-            }
+            var funcionario = await _funcionarioRepository.GetFuncionarioByIdAsync(id)
+                ?? throw new Exception("Funcionário não encontrado.");
 
             funcionario.Ativo = false;
 
@@ -73,12 +65,8 @@ namespace AppControleMantec.Application.Services
 
         public async Task AtivarFuncionarioAsync(string id)
         {
-            var funcionario = await _funcionarioRepository.GetFuncionarioByIdAsync(id);
-
-            if (funcionario == null)
-            {
-                throw new Exception("Funcionário não encontrado.");
-            }
+            var funcionario = await _funcionarioRepository.GetFuncionarioByIdAsync(id)
+                ?? throw new Exception("Funcionário não encontrado.");
 
             funcionario.Ativo = true;
 
