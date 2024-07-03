@@ -18,7 +18,7 @@ namespace AppControleMantec.API.Infra.IoC
             // Configuração do MongoDB
             services.AddSingleton<IMongoClient>(sp =>
             {
-                var connectionString = configuration.GetConnectionString("MongoDbConnection");
+                var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI") ?? configuration.GetConnectionString("MongoDbConnection");
                 return new MongoClient(connectionString);
             });
 
