@@ -35,13 +35,13 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Restore the app
-      run: msbuild ${{ env.AppControleMantec.sln }} /t:Restore /p:Configuration=${{ matrix.configuration }}
+      run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
 
     - name: Build the app
-      run: msbuild ${{ env.AppControleMantec.sln }} /p:Configuration=${{ matrix.configuration }}
+      run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
 
     - name: Run unit tests
-      run: dotnet test ${{ env.AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj }} /p:Configuration=${{ matrix.configuration }}
+      run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
 
     - name: Archive Build Artifacts
       uses: actions/upload-artifact@v3
@@ -52,7 +52,7 @@ jobs:
           **/obj/${{ matrix.configuration }}/
 
     - name: Add Heroku Remote
-      run: git remote add heroku https://git.heroku.com/${{ env.appcontrolemantec }}.git
+      run: git remote add heroku https://git.heroku.com/${{ env.Heroku_App_Name }}.git
 
     - name: Deploy to Heroku
       run: |
