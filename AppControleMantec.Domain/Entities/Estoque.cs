@@ -13,7 +13,7 @@ namespace AppControleMantec.Domain.Entities
 
         [BsonElement("ProdutoID")]
         [BsonRepresentation(BsonType.String)]
-        public string ProdutoID { get; set; }
+        public string? ProdutoID { get; set; }
 
         [BsonElement("Quantidade")]
         public int Quantidade { get; set; }
