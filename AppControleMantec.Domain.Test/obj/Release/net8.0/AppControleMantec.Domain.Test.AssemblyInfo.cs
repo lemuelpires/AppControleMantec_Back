@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppControleMantec.Domain.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5bc3a906b1fd550ae4ca169541b961b1b489fe8")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppControleMantec.Domain.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppControleMantec.Domain.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,9 +1,3 @@
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.csproj.AssemblyReference.cache
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.AssemblyInfoInputs.cache
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.AssemblyInfo.cs
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.csproj.CoreCompileInputs.cache
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\appsettings.json
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.API.exe
@@ -22,6 +16,7 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\Fluen
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MediatR.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MediatR.Contracts.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MediatR.Extensions.FluentValidation.AspNetCore.dll
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MongoDB.Bson.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MongoDB.Driver.dll
@@ -43,9 +38,17 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppCo
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Infra.Data.Mongo.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Infra.IoC.dll
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Application.pdb
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Domain.pdb
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Infra.IoC.pdb
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Domain.pdb
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\AppControleMantec.Infra.Data.Mongo.pdb
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.csproj.AssemblyReference.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.AssemblyInfoInputs.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.AssemblyInfo.cs
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.csproj.CoreCompileInputs.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.sourcelink.json
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\staticwebassets\msbuild.AppControleMantec.API.Microsoft.AspNetCore.StaticWebAssets.props
@@ -60,6 +63,3 @@ C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\refin
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.pdb
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.genruntimeconfig.cache
 C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\ref\AppControleMantec.API.dll
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\lemuel\source\repos\Mantec\AppControleMantec.API\obj\Debug\net8.0\AppControleMantec.API.sourcelink.json
