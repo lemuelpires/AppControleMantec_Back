@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppControleMantec.Infra.Data.Mongo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5bc3a906b1fd550ae4ca169541b961b1b489fe8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+764160e27897e9fcd17562ba31eefb6c6ffc6ded")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppControleMantec.Infra.Data.Mongo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppControleMantec.Infra.Data.Mongo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
