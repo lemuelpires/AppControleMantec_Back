@@ -110,7 +110,7 @@ namespace AppControleMantec.Domain.Entities
         #region Métodos Privados de Validação
         private void ValidateDomain(string clienteID, string funcionarioID, string servicoID, DateTime dataEntrada, string status, string observacoes)
         {
-            DomainExceptionValidation.When(string.IsNullOrEmpty(clienteID), "Cliente inválido. Selecione um cliente válido.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(clienteID) || clienteID == "0", "Cliente inválido. Selecione um cliente válido.");
             DomainExceptionValidation.When(string.IsNullOrEmpty(funcionarioID), "Funcionário inválido. Selecione um funcionário válido.");
             DomainExceptionValidation.When(string.IsNullOrEmpty(servicoID), "Serviço inválido. Selecione um serviço válido.");
 

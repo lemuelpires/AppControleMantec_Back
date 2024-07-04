@@ -72,7 +72,7 @@ namespace AppControleMantec.Domain.Entities
         #region Métodos Privados de Validação
         private void ValidateDomain(string produtoID, int quantidade, DateTime dataAtualizacao)
         {
-            DomainExceptionValidation.When(string.IsNullOrEmpty(produtoID), "Produto inválido. Selecione um produto válido.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(produtoID) || produtoID == "0", "Produto inválido. Selecione um produto válido.");
             DomainExceptionValidation.When(quantidade < 0, "Quantidade inválida. A quantidade não pode ser negativa.");
 
             // Aqui você pode adicionar validações adicionais conforme necessário

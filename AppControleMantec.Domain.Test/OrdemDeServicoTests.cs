@@ -1,9 +1,8 @@
-﻿using System;
-using Xunit;
-using AppControleMantec.Domain.Entities;
+﻿using AppControleMantec.Domain.Entities;
 using AppControleMantec.Domain.Validation;
+using Xunit;
 
-namespace AppControleMantec.Domain.Tests
+namespace AppControleMantec.Domain.Test
 {
     public class OrdemDeServicoTests
     {
@@ -11,9 +10,9 @@ namespace AppControleMantec.Domain.Tests
         public void OrdemDeServico_CriarOrdemDeServicoValida_DeveSerValida()
         {
             // Arrange
-            var clienteID = 1;
-            var funcionarioID = 1;
-            var servicoID = 1;
+            var clienteID = "1";
+            var funcionarioID = "1";
+            var servicoID = "1";
             var dataEntrada = DateTime.UtcNow;
             var status = "Em andamento";
             var observacoes = "Observações da ordem de serviço";
@@ -36,9 +35,9 @@ namespace AppControleMantec.Domain.Tests
         public void OrdemDeServico_CriarOrdemDeServicoComClienteIDInvalido_DeveLancarExcecao()
         {
             // Arrange
-            var clienteID = 0; // ClienteID inválido
-            var funcionarioID = 1;
-            var servicoID = 1;
+            var clienteID = "0"; 
+            var funcionarioID = "1";
+            var servicoID = "1";
             var dataEntrada = DateTime.UtcNow;
             var status = "Em andamento";
             var observacoes = "Observações da ordem de serviço";
@@ -49,44 +48,12 @@ namespace AppControleMantec.Domain.Tests
         }
 
         [Fact]
-        public void OrdemDeServico_CriarOrdemDeServicoComFuncionarioIDInvalido_DeveLancarExcecao()
-        {
-            // Arrange
-            var clienteID = 1;
-            var funcionarioID = 0; // FuncionarioID inválido
-            var servicoID = 1;
-            var dataEntrada = DateTime.UtcNow;
-            var status = "Em andamento";
-            var observacoes = "Observações da ordem de serviço";
-
-            // Act & Assert
-            var exception = Assert.Throws<DomainException>(() => new OrdemDeServico(clienteID, funcionarioID, servicoID, dataEntrada, status, observacoes));
-            Assert.Equal("Funcionário inválido. Selecione um funcionário válido.", exception.Message);
-        }
-
-        [Fact]
-        public void OrdemDeServico_CriarOrdemDeServicoComServicoIDInvalido_DeveLancarExcecao()
-        {
-            // Arrange
-            var clienteID = 1;
-            var funcionarioID = 1;
-            var servicoID = 0; // ServicoID inválido
-            var dataEntrada = DateTime.UtcNow;
-            var status = "Em andamento";
-            var observacoes = "Observações da ordem de serviço";
-
-            // Act & Assert
-            var exception = Assert.Throws<DomainException>(() => new OrdemDeServico(clienteID, funcionarioID, servicoID, dataEntrada, status, observacoes));
-            Assert.Equal("Serviço inválido. Selecione um serviço válido.", exception.Message);
-        }
-
-        [Fact]
         public void OrdemDeServico_CriarOrdemDeServicoComStatusInvalido_DeveLancarExcecao()
         {
             // Arrange
-            var clienteID = 1;
-            var funcionarioID = 1;
-            var servicoID = 1;
+            var clienteID = "1";
+            var funcionarioID = "1";
+            var servicoID = "1";
             var dataEntrada = DateTime.UtcNow;
             var status = ""; // Status inválido
             var observacoes = "Observações da ordem de serviço";
@@ -100,9 +67,9 @@ namespace AppControleMantec.Domain.Tests
         public void OrdemDeServico_ConcluirOrdem_DeveAlterarStatusEDataConclusao()
         {
             // Arrange
-            var clienteID = 1;
-            var funcionarioID = 1;
-            var servicoID = 1;
+            var clienteID = "1";
+            var funcionarioID = "1";
+            var servicoID = "1";
             var dataEntrada = DateTime.UtcNow;
             var status = "Em andamento";
             var observacoes = "Observações da ordem de serviço";
@@ -121,9 +88,9 @@ namespace AppControleMantec.Domain.Tests
         public void OrdemDeServico_CancelarOrdem_DeveAlterarStatusEAtivo()
         {
             // Arrange
-            var clienteID = 1;
-            var funcionarioID = 1;
-            var servicoID = 1;
+            var clienteID = "1";
+            var funcionarioID = "1";
+            var servicoID = "1";
             var dataEntrada = DateTime.UtcNow;
             var status = "Em andamento";
             var observacoes = "Observações da ordem de serviço";

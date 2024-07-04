@@ -11,7 +11,7 @@ namespace AppControleMantec.Domain.Tests
         public void Estoque_CriarEstoqueValido_DeveSerValido()
         {
             // Arrange
-            var produtoID = 1;
+            var produtoID = "1"; // ProdutoID como string
             var quantidade = 10;
             var dataAtualizacao = DateTime.UtcNow;
 
@@ -30,7 +30,7 @@ namespace AppControleMantec.Domain.Tests
         public void Estoque_CriarEstoqueComProdutoIDInvalido_DeveLancarExcecao()
         {
             // Arrange
-            var produtoID = 0; // ProdutoID inválido
+            var produtoID = "0"; // ProdutoID inválido como string
             var quantidade = 10;
             var dataAtualizacao = DateTime.UtcNow;
 
@@ -43,7 +43,7 @@ namespace AppControleMantec.Domain.Tests
         public void Estoque_CriarEstoqueComQuantidadeInvalida_DeveLancarExcecao()
         {
             // Arrange
-            var produtoID = 1;
+            var produtoID = "1";
             var quantidade = -1; // Quantidade inválida
             var dataAtualizacao = DateTime.UtcNow;
 
@@ -56,7 +56,7 @@ namespace AppControleMantec.Domain.Tests
         public void Estoque_AtualizarQuantidade_DeveAtualizarCorretamente()
         {
             // Arrange
-            var produtoID = 1;
+            var produtoID = "1";
             var quantidadeInicial = 10;
             var dataAtualizacaoInicial = DateTime.UtcNow;
             var estoque = new Estoque(produtoID, quantidadeInicial, dataAtualizacaoInicial);
@@ -76,7 +76,7 @@ namespace AppControleMantec.Domain.Tests
         public void Estoque_Desativar_DeveEstarInativo()
         {
             // Arrange
-            var produtoID = 1;
+            var produtoID = "1";
             var quantidade = 10;
             var dataAtualizacao = DateTime.UtcNow;
             var estoque = new Estoque(produtoID, quantidade, dataAtualizacao);
