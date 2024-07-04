@@ -17,7 +17,7 @@ jobs:
 
     env:
       Solution_Name: AppControleMantec.sln
-      Test_Project_Path: AppControleMantec.Domain.Tests/AppControleMantec.Domain.Tests.csproj
+      Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
 
     steps:
     - name: Checkout
