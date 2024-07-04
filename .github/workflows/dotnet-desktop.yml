@@ -16,10 +16,8 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: AppControleMantec_Back.sln # Nome correto da solução
-      Test_Project_Path: Tests\YourTestProject.csproj # Caminho para o projeto de teste
-      Wap_Project_Directory: MyWpfApp.Package # Diretório correto do projeto WAP relativo à solução
-      Wap_Project_Path: MyWpfApp.Package\MyWpfApp.Package.wapproj # Caminho correto para o projeto WAP
+      Solution_Name: AppControleMantec.sln
+      Test_Project_Path: AppControleMantec.Domain.Tests/AppControleMantec.Domain.Tests.csproj
 
     steps:
     - name: Checkout
@@ -35,33 +33,19 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
-    - name: Run unit tests
-      run: dotnet test
-
     - name: Restore the app
-      run: msbuild ${{ env.AppControleMantec.sln }} /t:Restore /p:Configuration=${{ env.Configuration }}
-      env:
-        Configuration: ${{ matrix.configuration }}
+      run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
 
-    - name: Decode the pfx
-      run: |
-        $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-        $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath GitHubActionsWorkflow.pfx
-        [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
+    - name: Build the app
+      run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Create the app package
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
-      env:
-        Appx_Bundle: Always
-        Appx_Bundle_Platforms: x86|x64
-        Appx_Package_Build_Mode: StoreUpload
-        Configuration: ${{ matrix.configuration }}
+    - name: Run unit tests
+      run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Remove the pfx
-      run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
-
-    - name: Upload build artifacts
+    - name: Archive Build Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: MSIX Package
-        path: ${{ env.Wap_Project_Directory }}\AppPackages
+        name: build-artifacts
+        path: |
+          **/bin/${{ matrix.configuration }}/
+          **/obj/${{ matrix.configuration }}/
