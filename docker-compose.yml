@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    image: appcontrole-mantec-backend:latest
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    volumes:
+      - ~/.aspnet/https:/https/
