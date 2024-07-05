@@ -2,7 +2,7 @@ using AppControleMantec.API.Infra.IoC;
 using AppControleMantec.Application.Mappings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,7 +41,7 @@ builder.Logging.AddDebug();
 
 var app = builder.Build();
 
-// Configuração do pipeline HTTP
+// Configuração do pipeline HTTP e HTTPS
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -56,4 +56,5 @@ app.UseCors("AllowAllOrigins");
 app.UseAuthorization();
 app.MapControllers();
 
+// Configuração para ouvir nas portas 8080 (HTTP) e 443 (HTTPS)
 app.Run();
