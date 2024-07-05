@@ -50,10 +50,3 @@ jobs:
         path: |
           **/bin/${{ matrix.configuration }}/
           **/obj/${{ matrix.configuration }}/
-
-    - name: Add Heroku Remote
-      run: git remote add heroku https://git.heroku.com/${{ env.Heroku_App_Name }}.git
-
-    - name: Deploy to Heroku
-      run: |
-        git push heroku main
