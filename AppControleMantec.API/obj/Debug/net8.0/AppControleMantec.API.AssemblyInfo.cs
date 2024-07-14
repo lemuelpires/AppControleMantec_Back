@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppControleMantec.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fa3d8cd0db698dd28cf9beaa572ee6c28701a2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0797a58b4bd053346d3543553b9fcb1653f4e980")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppControleMantec.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppControleMantec.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

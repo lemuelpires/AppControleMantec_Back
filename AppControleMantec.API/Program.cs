@@ -57,4 +57,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Adicione esta linha para garantir que o Kestrel use as configurações do arquivo appsettings.json
-app.Run("http://0.0.0.0:5000");
+app.Run();
