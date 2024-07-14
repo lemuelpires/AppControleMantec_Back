@@ -56,5 +56,5 @@ app.UseCors("AllowAllOrigins");
 app.UseAuthorization();
 app.MapControllers();
 
-// Configuração para ouvir nas portas 8080 (HTTP) e 443 (HTTPS)
-app.Run();
+// Adicione esta linha para garantir que o Kestrel use as configurações do arquivo appsettings.json
+app.Run("http://0.0.0.0:5000");
