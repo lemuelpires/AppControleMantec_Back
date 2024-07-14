@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppControleMantec.Infra.IoC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16c888c72fed0d3c69e67e84cfc18f93c2051b0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6ff086b9c55ce5e440ef1680fb97e6e32cd3c84")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppControleMantec.Infra.IoC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppControleMantec.Infra.IoC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

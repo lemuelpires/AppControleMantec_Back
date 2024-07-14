@@ -46,6 +46,7 @@ namespace AppControleMantec.Application.Services
         public async Task<OrdemDeServicoDTO> GetOrdemDeServicoByIdAsync(string id)
         {
             var ordemDeServico = await _ordemDeServicoRepository.GetOrdemDeServicoByIdAsync(id);
+
             if (ordemDeServico == null)
             {
                 return null; // Or return appropriate response
@@ -95,10 +96,7 @@ namespace AppControleMantec.Application.Services
 
         public async Task<string> InsertOrdemDeServicoAsync(OrdemDeServicoDTO ordemDeServicoDto)
         {
-            if (ordemDeServicoDto == null)
-            {
-                throw new ArgumentNullException(nameof(ordemDeServicoDto));
-            }
+            _ = ordemDeServicoDto ?? throw new ArgumentNullException(nameof(ordemDeServicoDto));
 
             var ordemDeServico = new OrdemDeServico
             {
@@ -122,10 +120,7 @@ namespace AppControleMantec.Application.Services
 
         public async Task UpdateOrdemDeServicoAsync(OrdemDeServicoDTO ordemDeServicoDto)
         {
-            if (ordemDeServicoDto == null)
-            {
-                throw new ArgumentNullException(nameof(ordemDeServicoDto));
-            }
+            _ = ordemDeServicoDto ?? throw new ArgumentNullException(nameof(ordemDeServicoDto));
 
             var ordemDeServico = new OrdemDeServico
             {

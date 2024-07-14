@@ -16,10 +16,8 @@ namespace AppControleMantec.Application.Services
         private readonly IMapper _mapper;
 
         public EstoqueAppService(IEstoqueRepository estoqueRepository, IMapper mapper)
-        {
-            _estoqueRepository = estoqueRepository ?? throw new ArgumentNullException(nameof(estoqueRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-        }
+     => (_estoqueRepository, _mapper) = (estoqueRepository ?? throw new ArgumentNullException(nameof(estoqueRepository)),
+                                         mapper ?? throw new ArgumentNullException(nameof(mapper)));
 
         public async Task<IEnumerable<EstoqueDTO>> GetEstoquesAsync()
         {

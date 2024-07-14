@@ -16,10 +16,8 @@ namespace AppControleMantec.Application.Services
         private readonly IMapper _mapper;
 
         public FuncionarioAppService(IFuncionarioRepository funcionarioRepository, IMapper mapper)
-        {
-            _funcionarioRepository = funcionarioRepository ?? throw new ArgumentNullException(nameof(funcionarioRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-        }
+                => (_funcionarioRepository, _mapper) = (funcionarioRepository ?? throw new ArgumentNullException(nameof(funcionarioRepository)),
+                                                        mapper ?? throw new ArgumentNullException(nameof(mapper)));
 
         public async Task<IEnumerable<FuncionarioDTO>> GetFuncionariosAsync()
         {
