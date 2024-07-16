@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     strategy:
       matrix:
         configuration: [Debug, Release]
@@ -18,7 +17,9 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
-      Heroku_App_Name: appcontrolemantec
+      Server_IP: 192.168.0.4
+      Server_User: SeuUsuario
+      Server_Dir: C:/caminho/para/seu/diretorio/no/servidor
 
     steps:
     - name: Checkout
@@ -50,3 +51,17 @@ jobs:
         path: |
           **/bin/${{ matrix.configuration }}/
           **/obj/${{ matrix.configuration }}/
+
+    - name: Deploy to Server
+      if: github.ref == 'refs/heads/main' # Deploy apenas no branch main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SERVER_IP: ${{ env.Server_IP }}
+        SERVER_USER: ${{ env.Server_User }}
+        SERVER_DIR: ${{ env.Server_Dir }}
+      run: |
+        echo "${SSH_PRIVATE_KEY}" > private_key
+        chmod 600 private_key
+        scp -i private_key -r **/bin/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+        scp -i private_key -r **/obj/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+        rm private_key
