@@ -19,7 +19,7 @@ jobs:
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
       Server_IP: 192.168.0.4
       Server_User: SeuUsuario
-      Server_Dir: C:/caminho/para/seu/diretorio/no/servidor
+      Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Alterado para o caminho do seu backend
 
     steps:
       - name: Checkout
@@ -52,16 +52,9 @@ jobs:
             **/bin/${{ matrix.configuration }}/
             **/obj/${{ matrix.configuration }}/
 
-      - name: Deploy to Server
-        if: github.ref == 'refs/heads/main' # Deploy apenas no branch main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SERVER_IP: ${{ env.Server_IP }}
-          SERVER_USER: ${{ env.Server_User }}
-          SERVER_DIR: ${{ env.Server_Dir }}
+      - name: Transfer Files to Remote Server
         run: |
-          echo "${SSH_PRIVATE_KEY}" > private_key
-          chmod 600 private_key
-          scp -i private_key -r **/bin/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
-          scp -i private_key -r **/obj/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
-          rm private_key
+          echo "put -r **/bin/${{ matrix.configuration }}/ **/obj/${{ matrix.configuration }}/" > upload_script.txt
+          echo "exit" >> upload_script.txt
+          type upload_script.txt | pscp -l Administrator -P 22 -pw Abacate+Verde -batch -bc upload_script.txt SeuUsuario@192.168.0.4:${{ env.Server_Dir }}
+        shell: bash
