@@ -22,46 +22,46 @@ jobs:
       Server_Dir: C:/caminho/para/seu/diretorio/no/servidor
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-    - name: Restore the app
-      run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
+      - name: Restore the app
+        run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
 
-    - name: Build the app
-      run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
+      - name: Build the app
+        run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Run unit tests
-      run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
+      - name: Run unit tests
+        run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Archive Build Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: build-artifacts
-        path: |
-          **/bin/${{ matrix.configuration }}/
-          **/obj/${{ matrix.configuration }}/
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            **/bin/${{ matrix.configuration }}/
+            **/obj/${{ matrix.configuration }}/
 
-    - name: Deploy to Server
-      if: github.ref == 'refs/heads/main' # Deploy apenas no branch main
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SERVER_IP: ${{ env.Server_IP }}
-        SERVER_USER: ${{ env.Server_User }}
-        SERVER_DIR: ${{ env.Server_Dir }}
-      run: |
-        echo "${SSH_PRIVATE_KEY}" > private_key
-        chmod 600 private_key
-        scp -i private_key -r **/bin/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
-        scp -i private_key -r **/obj/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
-        rm private_key
+      - name: Deploy to Server
+        if: github.ref == 'refs/heads/main' # Deploy apenas no branch main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ env.Server_IP }}
+          SERVER_USER: ${{ env.Server_User }}
+          SERVER_DIR: ${{ env.Server_Dir }}
+        run: |
+          echo "${SSH_PRIVATE_KEY}" > private_key
+          chmod 600 private_key
+          scp -i private_key -r **/bin/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+          scp -i private_key -r **/obj/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+          rm private_key
