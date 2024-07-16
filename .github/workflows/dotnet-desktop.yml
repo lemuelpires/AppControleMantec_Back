@@ -56,5 +56,5 @@ jobs:
         run: |
           echo "put -r **/bin/${{ matrix.configuration }}/ **/obj/${{ matrix.configuration }}/" > upload_script.txt
           echo "exit" >> upload_script.txt
-          type upload_script.txt | pscp -l Administrator -P 22 -pw Abacate+Verde -batch -bc upload_script.txt SeuUsuario@192.168.0.4:${{ env.Server_Dir }}
+          type upload_script.txt | pscp -l Administrator -P 22 -pw Abacate+Verde -batch -bc upload_script.txt administrator@192.168.0.4:${{ env.Server_Dir }}
         shell: bash
