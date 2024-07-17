@@ -17,6 +17,8 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
+      Server_IP: 192.168.0.4
+      Server_User: Administrator
       Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Caminho para o backend no servidor
 
     steps:
