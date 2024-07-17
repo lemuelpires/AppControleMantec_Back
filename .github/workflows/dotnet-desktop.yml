@@ -18,8 +18,8 @@ jobs:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
       Server_IP: 192.168.0.4
-      Server_User: Administrator
-      Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Caminho para o backend no servidor
+      Server_User: SeuUsuario
+      Server_Dir: C:/caminho/para/seu/diretorio/no/servidor
 
     steps:
       - name: Checkout
@@ -27,22 +27,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install .NET Core SDK
-        uses: actions/setup-dotnet@v5
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '5.0.x'
+          dotnet-version: 8.0.x
 
-      - name: Restore Dependencies
-        run: dotnet restore ${{ env.Solution_Name }}
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-      - name: Build the Project
-        run: dotnet build ${{ env.Solution_Name }} --configuration ${{ matrix.configuration }}
+      - name: Restore the app
+        run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
 
-      - name: Run Unit Tests
-        run: dotnet test ${{ env.Test_Project_Path }} --configuration ${{ matrix.configuration }}
+      - name: Build the app
+        run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
 
-      - name: Publish Artifacts
-        uses: actions/upload-artifact@v2
+      - name: Run unit tests
+        run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
+
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: |
@@ -50,7 +53,15 @@ jobs:
             **/obj/${{ matrix.configuration }}/
 
       - name: Deploy to Server
-        if: github.ref == 'refs/heads/main'  # Deploy apenas no branch main
+        if: github.ref == 'refs/heads/main' # Deploy apenas no branch main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ env.Server_IP }}
+          SERVER_USER: ${{ env.Server_User }}
+          SERVER_DIR: ${{ env.Server_Dir }}
         run: |
-          ssh-keyscan -H ${{ env.Server_IP }} >> ~/.ssh/known_hosts
-          scp -i "C:/Users/lemuel/.ssh/id_rsa" -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
+          echo "${SSH_PRIVATE_KEY}" > private_key
+          chmod 600 private_key
+          scp -i private_key -r **/bin/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+          scp -i private_key -r **/obj/${{ matrix.configuration }}/ ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+          rm private_key
