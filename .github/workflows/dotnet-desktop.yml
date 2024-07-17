@@ -64,7 +64,7 @@ jobs:
       run: |
         echo "***" > private_key
         chmod 600 private_key
-        destination="${SERVER_USER}@${SERVER_IP}:${SERVER_DIR}"
+        destination="${env:SERVER_USER}@${env:SERVER_IP}:${env:SERVER_DIR}"
         scp -i private_key -r **/bin/${{ matrix.configuration }}/* $destination
         scp -i private_key -r **/obj/${{ matrix.configuration }}/* $destination
         rm private_key
