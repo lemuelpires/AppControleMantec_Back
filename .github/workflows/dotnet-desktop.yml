@@ -25,10 +25,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install .NET Core SDK
-        uses: actions/setup-dotnet@v3
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.32'
+          dotnet-version: 8.0.x
 
       - name: Restore Dependencies
         run: dotnet restore ${{ env.Solution_Name }}
