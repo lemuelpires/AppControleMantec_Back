@@ -2,9 +2,9 @@ name: .NET Core Desktop
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -17,8 +17,6 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
-      Server_IP: 192.168.0.4
-      Server_User: Administrator
       Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Caminho para o backend no servidor
 
     steps:
@@ -30,7 +28,7 @@ jobs:
       - name: Install .NET Core SDK
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.32'
 
       - name: Restore Dependencies
         run: dotnet restore ${{ env.Solution_Name }}
@@ -54,5 +52,5 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
           chmod 600 private_key
-          scp -i private_key -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
+          scp -i private_key -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ secrets.Server_User }}@${{ secrets.Server_IP }}:${{ env.Server_Dir }}
           rm private_key
