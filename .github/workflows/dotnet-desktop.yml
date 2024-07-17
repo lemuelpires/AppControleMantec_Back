@@ -54,5 +54,5 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
           chmod 600 private_key
-          scp -i private_key -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ env.Administrator }}@${{ env.192.168.0.4 }}:${{ env.C:/inetpub/wwwroot/AppControleMantec_Back }}
+          scp -i private_key -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
           rm private_key
