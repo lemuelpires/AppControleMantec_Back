@@ -33,38 +33,38 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Setup MSBuild
+    - name: Install MSBuild
       uses: microsoft/setup-msbuild@v2
 
-    - name: Restore the app
+    - name: Restore application
       run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
 
-    - name: Build the app
+    - name: Build application
       run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
 
     - name: Run unit tests
       run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Archive Build Artifacts (Bin)
+    - name: Archive build artifacts (Bin)
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts-bin-${{ matrix.configuration }}
         path: '**/bin/${{ matrix.configuration }}/'
         if-no-files-found: warn
 
-    - name: Archive Build Artifacts (Obj)
+    - name: Archive build artifacts (Obj)
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts-obj-${{ matrix.configuration }}
         path: '**/obj/${{ matrix.configuration }}/'
         if-no-files-found: warn
 
-    - name: Deploy to Server
-      if: github.ref == 'refs/heads/main'  # Deploy apenas no branch main
+    - name: Deploy to server
+      if: github.ref == 'refs/heads/main' # Deploy only on main branch
       run: |
         echo "***" > private_key
         chmod 600 private_key
-        destination="${env:SERVER_USER}@${env:SERVER_IP}:${env:SERVER_DIR}"
+        $destination = "${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}"
         scp -i private_key -r **/bin/${{ matrix.configuration }}/* $destination
         scp -i private_key -r **/obj/${{ matrix.configuration }}/* $destination
         rm private_key
