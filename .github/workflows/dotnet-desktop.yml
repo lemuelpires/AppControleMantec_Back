@@ -18,8 +18,8 @@ jobs:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
       Server_IP: 192.168.0.4
-      Server_User: SeuUsuario
-      Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Alterado para o caminho do seu backend
+      Server_User: Administrator
+      Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Caminho para o backend no servidor
 
     steps:
       - name: Checkout
@@ -27,34 +27,30 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install .NET Core
-        uses: actions/setup-dotnet@v4
+      - name: Install .NET Core SDK
+        uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: '5.0.x'
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
+      - name: Restore Dependencies
+        run: dotnet restore ${{ env.Solution_Name }}
 
-      - name: Restore the app
-        run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
+      - name: Build the Project
+        run: dotnet build ${{ env.Solution_Name }} --configuration ${{ matrix.configuration }}
 
-      - name: Build the app
-        run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
+      - name: Run Unit Tests
+        run: dotnet test ${{ env.Test_Project_Path }} --configuration ${{ matrix.configuration }}
 
-      - name: Run unit tests
-        run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
-
-      - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v3
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v2
         with:
           name: build-artifacts
           path: |
             **/bin/${{ matrix.configuration }}/
             **/obj/${{ matrix.configuration }}/
 
-      - name: Transfer Files to Remote Server
+      - name: Deploy to Server
+        if: github.ref == 'refs/heads/main'  # Deploy apenas no branch main
         run: |
-          echo "put -r **/bin/${{ matrix.configuration }}/ **/obj/${{ matrix.configuration }}/" > upload_script.txt
-          echo "exit" >> upload_script.txt
-          type upload_script.txt | pscp -l Administrator -P 22 -pw Abacate+Verde -batch -bc upload_script.txt administrator@192.168.0.4:${{ env.Server_Dir }}
-        shell: bash
+          ssh-keyscan -H ${{ env.Server_IP }} >> ~/.ssh/known_hosts
+          scp -i "C:/Users/lemuel/.ssh/id_rsa" -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
