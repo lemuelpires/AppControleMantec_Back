@@ -2,9 +2,9 @@ name: .NET Core Desktop
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -18,9 +18,6 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
-      SERVER_DIR: 'C:/inetpub/wwwroot/AppControleMantec_Back'
-      SERVER_IP: '192.168.0.4'
-      SERVER_USER: 'Administrator'
 
     steps:
     - name: Checkout
@@ -33,39 +30,22 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Install MSBuild
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
-    - name: Restore application
+    - name: Restore the app
       run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
 
-    - name: Build application
+    - name: Build the app
       run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }}
 
     - name: Run unit tests
       run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Archive build artifacts (Bin)
+    - name: Archive Build Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts-bin-${{ matrix.configuration }}
-        path: '**/bin/${{ matrix.configuration }}/'
-        if-no-files-found: warn
-
-    - name: Archive build artifacts (Obj)
-      uses: actions/upload-artifact@v3
-      with:
-        name: build-artifacts-obj-${{ matrix.configuration }}
-        path: '**/obj/${{ matrix.configuration }}/'
-        if-no-files-found: warn
-
-    - name: Deploy to server
-      if: github.ref == 'refs/heads/main' # Deploy only on main branch
-      run: |
-        echo "***" > private_key
-        chmod 600 private_key
-        $destination = "${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}"
-        scp -i private_key -r **/bin/${{ matrix.configuration }}/* $destination
-        scp -i private_key -r **/obj/${{ matrix.configuration }}/* $destination
-        rm private_key
-      shell: pwsh
+        name: build-artifacts
+        path: |
+          **/bin/${{ matrix.configuration }}/
+          **/obj/${{ matrix.configuration }}/
