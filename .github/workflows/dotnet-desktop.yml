@@ -18,8 +18,8 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
-      Server_IP: 192.168.0.4
-      Server_User: Administrator
+      Server_IP: ${{ secrets.Server_IP }}
+      Server_User: ${{ secrets.Server_User }}
       Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Caminho para o backend no servidor
 
     steps:
@@ -45,18 +45,18 @@ jobs:
     - name: Run unit tests
       run: dotnet test ${{ env.Test_Project_Path }} /p:Configuration=${{ matrix.configuration }}
 
-    - name: Archive Build Artifacts
+    - name: Archive Build Artifacts (Bin)
       uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts-bin
-        path: **/bin/${{ matrix.configuration }}/
+        name: build-artifacts-bin-${{ matrix.configuration }}
+        path: '**/bin/${{ matrix.configuration }}/'
         if-no-files-found: warn
-        
-    - name: Archive Obj Artifacts
+
+    - name: Archive Build Artifacts (Obj)
       uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts-obj
-        path: **/obj/${{ matrix.configuration }}/
+        name: build-artifacts-obj-${{ matrix.configuration }}
+        path: '**/obj/${{ matrix.configuration }}/'
         if-no-files-found: warn
 
     - name: Deploy to Server
@@ -64,5 +64,6 @@ jobs:
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
         chmod 600 private_key
-        scp -i private_key -r **/bin/${{ matrix.configuration }}/* **/obj/${{ matrix.configuration }}/* ${{ secrets.Server_User }}@${{ secrets.Server_IP }}:${{ env.Server_Dir }}
+        scp -i private_key -r **/bin/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
+        scp -i private_key -r **/obj/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
         rm private_key
