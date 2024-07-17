@@ -18,6 +18,9 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
+      SERVER_DIR: 'C:/inetpub/wwwroot/AppControleMantec_Back'
+      SERVER_IP: '192.168.0.4'
+      SERVER_USER: 'Administrator'
 
     steps:
     - name: Checkout
@@ -59,12 +62,10 @@ jobs:
     - name: Deploy to Server
       if: github.ref == 'refs/heads/main'  # Deploy apenas no branch main
       run: |
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
+        echo "***" > private_key
         chmod 600 private_key
-        $sourcePathBin = "**/bin/${{ matrix.configuration }}/*"
-        $sourcePathObj = "**/obj/${{ matrix.configuration }}/*"
-        $destination = "${env:SERVER_USER}@${env:SERVER_IP}:${env:SERVER_DIR}"
-        scp -i private_key -r $sourcePathBin $destination
-        scp -i private_key -r $sourcePathObj $destination
+        destination="${SERVER_USER}@${SERVER_IP}:${SERVER_DIR}"
+        scp -i private_key -r **/bin/${{ matrix.configuration }}/* $destination
+        scp -i private_key -r **/obj/${{ matrix.configuration }}/* $destination
         rm private_key
       shell: pwsh
