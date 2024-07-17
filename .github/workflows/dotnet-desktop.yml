@@ -2,9 +2,9 @@ name: .NET Core Desktop
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -48,11 +48,17 @@ jobs:
     - name: Archive Build Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts
-        path: |
-          **/bin/${{ matrix.configuration }}/
-          **/obj/${{ matrix.configuration }}/
-          
+        name: build-artifacts-bin
+        path: **/bin/${{ matrix.configuration }}/
+        if-no-files-found: warn
+        
+    - name: Archive Obj Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts-obj
+        path: **/obj/${{ matrix.configuration }}/
+        if-no-files-found: warn
+
     - name: Deploy to Server
       if: github.ref == 'refs/heads/main'  # Deploy apenas no branch main
       run: |
