@@ -18,9 +18,9 @@ jobs:
     env:
       Solution_Name: AppControleMantec.sln
       Test_Project_Path: AppControleMantec.Domain.Test/AppControleMantec.Domain.Test.csproj
-      Server_IP: ${{ secrets.Server_IP }}
-      Server_User: ${{ secrets.Server_User }}
-      Server_Dir: C:/inetpub/wwwroot/AppControleMantec_Back  # Caminho para o backend no servidor
+      SERVER_DIR: ${{ secrets.SERVER_DIR }}
+      SERVER_IP: ${{ secrets.SERVER_IP }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
 
     steps:
     - name: Checkout
@@ -64,6 +64,6 @@ jobs:
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
         chmod 600 private_key
-        scp -i private_key -r **/bin/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
-        scp -i private_key -r **/obj/${{ matrix.configuration }}/* ${{ env.Server_User }}@${{ env.Server_IP }}:${{ env.Server_Dir }}
+        scp -i private_key -r **/bin/${{ matrix.configuration }}/* ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
+        scp -i private_key -r **/obj/${{ matrix.configuration }}/* ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:${{ env.SERVER_DIR }}
         rm private_key
