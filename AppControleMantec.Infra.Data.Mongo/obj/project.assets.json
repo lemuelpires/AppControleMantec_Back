@@ -479,7 +479,7 @@
           }
         }
       },
-      "MongoDB.Bson/2.26.0": {
+      "MongoDB.Bson/2.28.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -496,13 +496,13 @@
           }
         }
       },
-      "MongoDB.Driver/2.26.0": {
+      "MongoDB.Driver/2.28.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
-          "MongoDB.Bson": "2.26.0",
-          "MongoDB.Driver.Core": "2.26.0",
-          "MongoDB.Libmongocrypt": "1.9.0"
+          "MongoDB.Bson": "2.28.0",
+          "MongoDB.Driver.Core": "2.28.0",
+          "MongoDB.Libmongocrypt": "1.11.0"
         },
         "compile": {
           "lib/netstandard2.1/MongoDB.Driver.dll": {
@@ -515,14 +515,14 @@
           }
         }
       },
-      "MongoDB.Driver.Core/2.26.0": {
+      "MongoDB.Driver.Core/2.28.0": {
         "type": "package",
         "dependencies": {
           "AWSSDK.SecurityToken": "3.7.100.14",
           "DnsClient": "1.6.1",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
-          "MongoDB.Bson": "2.26.0",
-          "MongoDB.Libmongocrypt": "1.9.0",
+          "MongoDB.Bson": "2.28.0",
+          "MongoDB.Libmongocrypt": "1.11.0",
           "SharpCompress": "0.30.1",
           "Snappier": "1.0.0",
           "System.Buffers": "4.5.1",
@@ -539,12 +539,12 @@
           }
         }
       },
-      "MongoDB.Driver.GridFS/2.26.0": {
+      "MongoDB.Driver.GridFS/2.28.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.26.0",
-          "MongoDB.Driver": "2.26.0",
-          "MongoDB.Driver.Core": "2.26.0"
+          "MongoDB.Bson": "2.28.0",
+          "MongoDB.Driver": "2.28.0",
+          "MongoDB.Driver.Core": "2.28.0"
         },
         "compile": {
           "lib/netstandard2.1/MongoDB.Driver.GridFS.dll": {
@@ -557,7 +557,7 @@
           }
         }
       },
-      "MongoDB.Libmongocrypt/1.9.0": {
+      "MongoDB.Libmongocrypt/1.11.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/MongoDB.Libmongocrypt.dll": {}
@@ -865,11 +865,11 @@
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "8.0.0",
           "Microsoft.Extensions.Configuration.Json": "8.0.0",
           "Microsoft.Extensions.Logging": "8.0.0",
-          "MongoDB.Bson": "2.26.0",
-          "MongoDB.Driver": "2.26.0",
-          "MongoDB.Driver.Core": "2.26.0",
-          "MongoDB.Driver.GridFS": "2.26.0",
-          "MongoDB.Libmongocrypt": "1.9.0",
+          "MongoDB.Bson": "2.28.0",
+          "MongoDB.Driver": "2.28.0",
+          "MongoDB.Driver.Core": "2.28.0",
+          "MongoDB.Driver.GridFS": "2.28.0",
+          "MongoDB.Libmongocrypt": "1.11.0",
           "Moq": "4.20.70",
           "Swashbuckle.AspNetCore": "6.6.2",
           "Swashbuckle.AspNetCore.Swagger": "6.6.2"
@@ -1874,52 +1874,52 @@
         "version.txt"
       ]
     },
-    "MongoDB.Bson/2.26.0": {
-      "sha512": "g4YPC3SHHB4oKqkQdRCh03E9Ex7g/WawFhU5ABtsfkYEjCRMZrEA2jH+bGB1DAlDQ+jweXOdh1S2KkVEaZ5lng==",
+    "MongoDB.Bson/2.28.0": {
+      "sha512": "yiWN3scVV0lYpFXn1CL4PB0BK3KrHFC44qw72+/cBIDS9+r9MQYfxFMxM+pAvnSssAZtQ7ZabCu7z3UOXqKy4w==",
       "type": "package",
-      "path": "mongodb.bson/2.26.0",
+      "path": "mongodb.bson/2.28.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.md",
+        "README.md",
         "lib/net472/MongoDB.Bson.dll",
         "lib/net472/MongoDB.Bson.xml",
         "lib/netstandard2.0/MongoDB.Bson.dll",
         "lib/netstandard2.0/MongoDB.Bson.xml",
         "lib/netstandard2.1/MongoDB.Bson.dll",
         "lib/netstandard2.1/MongoDB.Bson.xml",
-        "mongodb.bson.2.26.0.nupkg.sha512",
+        "mongodb.bson.2.28.0.nupkg.sha512",
         "mongodb.bson.nuspec",
         "packageIcon.png"
       ]
     },
-    "MongoDB.Driver/2.26.0": {
-      "sha512": "PaRNwcnsjh0rXiNqphQZZn0l2Lef/lEvmJSmHQAIX2jcU3XM/WTFezSvaxNNgvGwUS0MunQyPLECBPnZuRaupQ==",
+    "MongoDB.Driver/2.28.0": {
+      "sha512": "/aMeLbiqm8aqopZU7MlnJwQfc94VLoTRIK3xPSWqv6kDS1MV8tf1kcX2X3Ji71n2NspZ1jwHIpZ/AP5sQyBhXw==",
       "type": "package",
-      "path": "mongodb.driver/2.26.0",
+      "path": "mongodb.driver/2.28.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.md",
+        "README.md",
         "lib/net472/MongoDB.Driver.dll",
         "lib/net472/MongoDB.Driver.xml",
         "lib/netstandard2.0/MongoDB.Driver.dll",
         "lib/netstandard2.0/MongoDB.Driver.xml",
         "lib/netstandard2.1/MongoDB.Driver.dll",
         "lib/netstandard2.1/MongoDB.Driver.xml",
-        "mongodb.driver.2.26.0.nupkg.sha512",
+        "mongodb.driver.2.28.0.nupkg.sha512",
         "mongodb.driver.nuspec",
         "packageIcon.png"
       ]
     },
-    "MongoDB.Driver.Core/2.26.0": {
-      "sha512": "y1Gs8a+ON/NqOd0dWfGfxluqitbD2rAecEvg5wN5GfWQf328TKyWZLUBbFG5H70hWZG/RUryZwNGMnBdPFn7QQ==",
+    "MongoDB.Driver.Core/2.28.0": {
+      "sha512": "Ek5cjiN9FwBsTdJnLouOsKWjplr4D+8fs9urOhzBKZLygOsgIxTDLzpoHC3Mg4bJ1V/Mbz0/xXr0KqUXdmzqEg==",
       "type": "package",
-      "path": "mongodb.driver.core/2.26.0",
+      "path": "mongodb.driver.core/2.28.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.md",
+        "README.md",
         "THIRD-PARTY-NOTICES",
         "lib/net472/MongoDB.Driver.Core.dll",
         "lib/net472/MongoDB.Driver.Core.xml",
@@ -1927,34 +1927,34 @@
         "lib/netstandard2.0/MongoDB.Driver.Core.xml",
         "lib/netstandard2.1/MongoDB.Driver.Core.dll",
         "lib/netstandard2.1/MongoDB.Driver.Core.xml",
-        "mongodb.driver.core.2.26.0.nupkg.sha512",
+        "mongodb.driver.core.2.28.0.nupkg.sha512",
         "mongodb.driver.core.nuspec",
         "packageIcon.png"
       ]
     },
-    "MongoDB.Driver.GridFS/2.26.0": {
-      "sha512": "vIud/fnHe/QNuD4Fm03meeaU2rxLCWs6AaQ5enn0N+E3kV1QRkFWylWn8HpzVQwe8ArWxRGd8ZsY4RgjJ216SA==",
+    "MongoDB.Driver.GridFS/2.28.0": {
+      "sha512": "wjMPZXWH5uCi3PtZZXwxdK4bhdwBH4wUa0qT62IaXcxhFrhslTeJIBSabdgZjvtJEbFl20qyckdoCxbEcypHRQ==",
       "type": "package",
-      "path": "mongodb.driver.gridfs/2.26.0",
+      "path": "mongodb.driver.gridfs/2.28.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.md",
+        "README.md",
         "lib/net472/MongoDB.Driver.GridFS.dll",
         "lib/net472/MongoDB.Driver.GridFS.xml",
         "lib/netstandard2.0/MongoDB.Driver.GridFS.dll",
         "lib/netstandard2.0/MongoDB.Driver.GridFS.xml",
         "lib/netstandard2.1/MongoDB.Driver.GridFS.dll",
         "lib/netstandard2.1/MongoDB.Driver.GridFS.xml",
-        "mongodb.driver.gridfs.2.26.0.nupkg.sha512",
+        "mongodb.driver.gridfs.2.28.0.nupkg.sha512",
         "mongodb.driver.gridfs.nuspec",
         "packageIcon.png"
       ]
     },
-    "MongoDB.Libmongocrypt/1.9.0": {
-      "sha512": "5uMtRXwy2NkSRWVQUkkdtq8BsRiHbE6eX8vX52NtMvDC/T4VTtHZLQb8ogW+mw0WSvM1IIUvz3Gl1iMJmT8HKQ==",
+    "MongoDB.Libmongocrypt/1.11.0": {
+      "sha512": "x1Fm9b5/93k1l0FpbUxHrcFIm/6m/qXfmbQddtHILqltx2EVSkIAzzBMiCr4D/3IBXSEWzgXP73xFExIpXQ9lQ==",
       "type": "package",
-      "path": "mongodb.libmongocrypt/1.9.0",
+      "path": "mongodb.libmongocrypt/1.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1963,15 +1963,19 @@
         "content/libmongocrypt.dylib",
         "content/libmongocrypt.so",
         "content/mongocrypt.dll",
+        "contentFiles/any/net472/libmongocrypt.dylib",
+        "contentFiles/any/net472/libmongocrypt.so",
+        "contentFiles/any/net472/mongocrypt.dll",
         "contentFiles/any/netstandard2.0/libmongocrypt.dylib",
         "contentFiles/any/netstandard2.0/libmongocrypt.so",
         "contentFiles/any/netstandard2.0/mongocrypt.dll",
         "contentFiles/any/netstandard2.1/libmongocrypt.dylib",
         "contentFiles/any/netstandard2.1/libmongocrypt.so",
         "contentFiles/any/netstandard2.1/mongocrypt.dll",
+        "lib/net472/MongoDB.Libmongocrypt.dll",
         "lib/netstandard2.0/MongoDB.Libmongocrypt.dll",
         "lib/netstandard2.1/MongoDB.Libmongocrypt.dll",
-        "mongodb.libmongocrypt.1.9.0.nupkg.sha512",
+        "mongodb.libmongocrypt.1.11.0.nupkg.sha512",
         "mongodb.libmongocrypt.nuspec",
         "runtimes/linux/native/libmongocrypt.so",
         "runtimes/osx/native/libmongocrypt.dylib",
@@ -2498,11 +2502,11 @@
       "Microsoft.Extensions.Configuration.EnvironmentVariables >= 8.0.0",
       "Microsoft.Extensions.Configuration.Json >= 8.0.0",
       "Microsoft.Extensions.Logging >= 8.0.0",
-      "MongoDB.Bson >= 2.26.0",
-      "MongoDB.Driver >= 2.26.0",
-      "MongoDB.Driver.Core >= 2.26.0",
-      "MongoDB.Driver.GridFS >= 2.26.0",
-      "MongoDB.Libmongocrypt >= 1.9.0",
+      "MongoDB.Bson >= 2.28.0",
+      "MongoDB.Driver >= 2.28.0",
+      "MongoDB.Driver.Core >= 2.28.0",
+      "MongoDB.Driver.GridFS >= 2.28.0",
+      "MongoDB.Libmongocrypt >= 1.11.0",
       "Moq >= 4.20.70",
       "Swashbuckle.AspNetCore >= 6.6.2",
       "Swashbuckle.AspNetCore.Swagger >= 6.6.2"
@@ -2515,11 +2519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
+      "projectUniqueName": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
       "projectName": "AppControleMantec.Infra.Data.Mongo",
-      "projectPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
+      "projectPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
       "packagesPath": "C:\\Users\\lemuel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\obj\\",
+      "outputPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2541,8 +2545,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj": {
-              "projectPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj"
+            "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj": {
+              "projectPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj"
             }
           }
         }
@@ -2592,23 +2596,23 @@
           },
           "MongoDB.Bson": {
             "target": "Package",
-            "version": "[2.26.0, )"
+            "version": "[2.28.0, )"
           },
           "MongoDB.Driver": {
             "target": "Package",
-            "version": "[2.26.0, )"
+            "version": "[2.28.0, )"
           },
           "MongoDB.Driver.Core": {
             "target": "Package",
-            "version": "[2.26.0, )"
+            "version": "[2.28.0, )"
           },
           "MongoDB.Driver.GridFS": {
             "target": "Package",
-            "version": "[2.26.0, )"
+            "version": "[2.28.0, )"
           },
           "MongoDB.Libmongocrypt": {
             "target": "Package",
-            "version": "[1.9.0, )"
+            "version": "[1.11.0, )"
           },
           "Moq": {
             "target": "Package",
@@ -2639,7 +2643,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj": {}
+    "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj": {
+    "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj",
+        "projectUniqueName": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj",
         "projectName": "AppControleMantec.Domain",
-        "projectPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj",
+        "projectPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj",
         "packagesPath": "C:\\Users\\lemuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\obj\\",
+        "outputPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -80,23 +80,23 @@
             },
             "MongoDB.Bson": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Driver.Core": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Driver.GridFS": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Libmongocrypt": {
               "target": "Package",
-              "version": "[1.9.0, )"
+              "version": "[1.11.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -127,18 +127,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj": {
+    "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
+        "projectUniqueName": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
         "projectName": "AppControleMantec.Infra.Data.Mongo",
-        "projectPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
+        "projectPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\AppControleMantec.Infra.Data.Mongo.csproj",
         "packagesPath": "C:\\Users\\lemuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\obj\\",
+        "outputPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Infra.Data.Mongo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -160,8 +160,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj": {
-                "projectPath": "C:\\Users\\lemuel\\source\\repos\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj"
+              "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\projetoMantec\\AppControleMantec_Back\\AppControleMantec.Domain\\AppControleMantec.Domain.csproj"
               }
             }
           }
@@ -211,23 +211,23 @@
             },
             "MongoDB.Bson": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Driver.Core": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Driver.GridFS": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[2.28.0, )"
             },
             "MongoDB.Libmongocrypt": {
               "target": "Package",
-              "version": "[1.9.0, )"
+              "version": "[1.11.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -258,7 +258,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

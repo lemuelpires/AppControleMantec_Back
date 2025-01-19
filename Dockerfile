@@ -1,8 +1,7 @@
 # Estágio base para execução
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 443
+EXPOSE 5000
 
 # Estágio de build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -25,4 +24,5 @@ RUN dotnet publish "AppControleMantec.API.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://+:5000
 ENTRYPOINT ["dotnet", "AppControleMantec.API.dll"]
