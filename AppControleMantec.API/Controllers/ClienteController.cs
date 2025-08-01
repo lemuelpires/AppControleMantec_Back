@@ -21,7 +21,7 @@ namespace AppControleMantec.API.Controllers
 
         // GET: api/cliente
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ClienteDTO>>> GetClientes([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<ClienteDTO>>> GetClientes([FromQuery] int page = 1, [FromQuery] int pageSize = 6000 )
         {
             try
             {
